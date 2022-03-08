@@ -105,14 +105,15 @@ for (const btn of btnEnviarMail) {
                     body:data
                 }).then(res=>res.json())
                     .then(respuesta => {
+                        console.log(respuesta);
                         
                         if(respuesta == 'ok'){
 
-                            swal({
-                                type: "warning",
-                                title: "Enviando..",
-                                showConfirmButton: false,
-                            })
+                            // swal({
+                            //     type: "warning",
+                            //     title: "Enviando..",
+                            //     showConfirmButton: false,
+                            // })
 
                             let url = 'ajax/informes.ajax.php'
 
@@ -125,6 +126,8 @@ for (const btn of btnEnviarMail) {
                                 body:data
                             }).then(resp => resp.json())
                             .then(respuesta=>{
+                                
+                                console.log(respuesta);
                                 
                                 if(respuesta == 'ok'){
 
