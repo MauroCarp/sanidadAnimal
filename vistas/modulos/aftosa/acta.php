@@ -341,7 +341,7 @@
                 
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-7">
                 
                   <input type="number" class="form-control" id="cantidadCarbunclo" name="cantidadCarbunclo" value="0">
                 
@@ -367,7 +367,7 @@
                 
                 </div>
 
-                <div class="col-md-5">
+                <div class="col-md-7">
                 
                   <input type="number" class="form-control" id="cantidadBrucelosis"  name="cantidadBrucelosis" value="0">
                 

@@ -84,7 +84,7 @@ if($_SESSION["perfil"] == "Especial"){
 
       <div class="box-body">
         
-        <table class="table table-bordered table-striped dt-responsive tablas tablaNoVacunados" width="100%">
+        <table class="table table-bordered table-striped dt-responsive tablas" width="100%">
             
             <thead>
             

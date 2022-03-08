@@ -1,7 +1,7 @@
 
 <div id="modalEditarProductor" class="modal fade" role="dialog">
   
-  <div class="modal-dialog" style="width:1500px;">
+  <div class="modal-dialog" style="width:90%;">
 
     <div class="modal-content">
 

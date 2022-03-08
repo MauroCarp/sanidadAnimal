@@ -12,37 +12,67 @@ class ControladorVeterinarios{
 
 			   	$tabla = "veterinarios";
 
-			   	$datos = array("nombre"=>$_POST["nombre"],
-							   "matricula"=>$_POST["matricula"],
-							   "domicilio"=>$_POST["domicilio"],
-							   "telefono"=>$_POST["telefono"],
-							   "mail"=>$_POST["email"],
-							   "cuit"=>$_POST["cuit"],
-							   "tipo"=>$_POST["tipo"]);
+				$item = 'matricula';
 
-			   	$respuesta = ModeloVeterinarios::mdlIngresarVeterinario($tabla, $datos);
-			   
-				if($respuesta == "ok"){
+				$valor = $_POST['matricula'];
+
+				$veterinarioValido = ControladorVeterinarios::ctrMostrarVeterinarios($item,$valor);
+
+				if(!$veterinarioValido){
+
+			
+
+					$datos = array("nombre"=>$_POST["nombre"],
+								"matricula"=>$_POST["matricula"],
+								"domicilio"=>$_POST["domicilio"],
+								"telefono"=>$_POST["telefono"],
+								"mail"=>$_POST["email"],
+								"cuit"=>$_POST["cuit"],
+								"tipo"=>$_POST["tipo"]);
+
+					$respuesta = ModeloVeterinarios::mdlIngresarVeterinario($tabla, $datos);
+				
+					if($respuesta == "ok"){
+
+						echo'<script>
+
+						swal({
+							type: "success",
+							title: "El Veterinario ha sido guardado correctamente",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar"
+							}).then(function(result){
+										if (result.value) {
+
+										window.location = "veterinarios";
+
+										}
+									})
+
+						</script>';
+
+					}
+
+				}else{
 
 					echo'<script>
 
-					swal({
-						  type: "success",
-						  title: "El Veterinario ha sido guardado correctamente",
-						  showConfirmButton: true,
-						  confirmButtonText: "Cerrar"
-						  }).then(function(result){
-									if (result.value) {
+						swal({
+							type: "error",
+							title: "La matricula del Veterinario ya esta cargada. Verifique si la matricula es la correcta.",
+							showConfirmButton: true,
+							confirmButtonText: "Cerrar"
+							}).then(function(result){
+										if (result.value) {
 
-									window.location = "veterinarios";
+										window.location = "veterinarios";
 
-									}
-								})
+										}
+									})
 
-					</script>';
+						</script>';
 
 				}
-
 		
 		}
 

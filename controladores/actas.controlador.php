@@ -412,6 +412,26 @@ class ControladorActas{
         return $respuesta;
 
     }
+    
+    /*=============================================
+    SUMAR VACUNADOS INNER JOIN PRODUCTORES
+    =============================================*/
+
+    static public function ctrSumarVacunados($item,$valor){
+
+        $tabla = "actas";
+
+        $tabla2 = 'productores';
+
+        $item2 = 'campania';
+
+        $valor2 = $_COOKIE['campania'];
+
+        $respuesta = ModeloActas::mdlSumarVacunados($tabla,$tabla2,$item,$valor,$item2,$valor2);
+
+        return $respuesta;
+
+    }
 
 
 

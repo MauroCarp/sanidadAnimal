@@ -17,7 +17,8 @@ class ControladorAftosa{
             $valor = $_GET['campania'];
 
             $respuesta = ModeloAftosa::mdlCargarCampania($tabla, $item, $valor);
-
+    
+            
             if($respuesta == "ok"){
 
                 echo'<script>
@@ -145,8 +146,8 @@ class ControladorAftosa{
             
                         $Reader->ChangeSheet($i);
             
-                            foreach ($Reader as $Row){
-                                
+                            foreach ($Reader as $Row){;
+
                                 $rowNumber++;
                                 
                                 
@@ -160,18 +161,18 @@ class ControladorAftosa{
 
                                     $data = array(
                                         'renspa' => $Row[0],
-                                        'vacas' => $Row[3],
-                                        'vaquillonas' => $Row[4],
-                                        'novillos' => $Row[5],
-                                        'novillitos' => $Row[6],
-                                        'terneras' => $Row[7],
-                                        'terneros' => $Row[8],
-                                        'toros' => $Row[9],
-                                        'toritos' => $Row[10]
+                                        'vacas' => $Row[2],
+                                        'vaquillonas' => $Row[3],
+                                        'novillos' => $Row[4],
+                                        'novillitos' => $Row[5],
+                                        'terneras' => $Row[6],
+                                        'terneros' => $Row[7],
+                                        'toros' => $Row[8],
+                                        'toritos' => $Row[9]
                                     );
-            
+                                    
                                     $respuesta = ControladorAnimales::ctrCargarExistencia($data);
-
+                               
                                 }
                                 
                                 if ($rowNumber == 1){

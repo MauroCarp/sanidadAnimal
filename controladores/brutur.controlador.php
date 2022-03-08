@@ -88,13 +88,6 @@ class ControladorBruTur{
 
 		}	
 
-		echo "<script>
-
-		setTimeout(function(){
-		    window.close();
-		},1500)
-
-		</script>";
 
 	}
 
